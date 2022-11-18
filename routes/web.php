@@ -23,12 +23,7 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/soal', [SoalController::class,'index']);
-
-Route::get('/tambah-soal', [SoalController::class,'create']);
-Route::post('/simpan-soal', [SoalController::class,'store']);
-
-
+Route::resource('soal', SoalController::class);
 
 
 

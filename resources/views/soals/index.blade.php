@@ -25,7 +25,7 @@
 
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href='/tambah-soal' class="btn btn-primary btn-md mb-3 float-right">Tambah Soal</a>
+                        <a href='{{ Route('soal.create') }}' class="btn btn-primary btn-md mb-3 float-right">Tambah Soal</a>
 
                         <table class="table table-bordered mt-1">
                             <thead>
@@ -44,6 +44,14 @@
                                     <th>{{ $hasil->dosen }}</th>
                                     <th>{{ $hasil->jumlah_soal }}</th>
                                     <th>{{ $hasil->keterangan }}</th>
+                                    <td>
+                                        <form action="{{ route('soal.destroy', $hasil->id) }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <a href="{{ route('soal.edit', $hasil->id) }}" class="btn btn-info">Edit</a>
+                                            <button class="btn btn-danger">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </thead>

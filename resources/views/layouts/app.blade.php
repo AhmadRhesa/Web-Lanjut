@@ -25,7 +25,7 @@
                             <a class="nav-link" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/soal">Soal</a>
+                            <a class="nav-link" href="{{ route('soal.index') }}">Soal</a>
                         </li>
                     </ul>
                 </div>
